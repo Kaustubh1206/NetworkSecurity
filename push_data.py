@@ -30,7 +30,8 @@ class NetworkDataExtract():
             pass
         except Exception as e:
             raise NetworkSecurityException(e,sys)
-        
+
+#-------------------------------- Converting Data to JSON ------------------------------
     def cv_to_json_convertor(self,file_path):
         try:
             data=pd.read_csv(file_path)
@@ -45,7 +46,8 @@ class NetworkDataExtract():
 
         except Exception as e:
             raise NetworkSecurityException(e,sys)
-    
+        
+#------------------------------- Insert data into mongo --------------------------------
     def insert_data_mongodb(self,records,database,collection):
         try:
             self.database=database
@@ -61,7 +63,8 @@ class NetworkDataExtract():
         
         except Exception as e:
             raise NetworkSecurityException(e,sys)
-        
+
+# --------------------------- Intitate ------------------------------------------------        
 if __name__=="__main__":
     FILE_PATH="Network_Data/phisingData.csv"
     DATABASE="KAUSTUBHAI"
